@@ -163,6 +163,18 @@ function stop(){
 }
 document.getElementById('start').addEventListener('click',start);
 document.getElementById('stop' ).addEventListener('click',stop);
+/* ---------- Atajo: barra espaciadora ---------- */
+document.addEventListener('keydown', e => {
+  if (e.code === 'Space') {          // barra espaciadora
+    e.preventDefault();              // evita que la página haga scroll
+    if (schedTimer) {                // metrónomo ya corriendo
+      stop();
+    } else {
+      start();
+    }
+  }
+});
+
 
 /* ------------------------------------------------- */
 /* 6. Compases / subdiv / skins                      */

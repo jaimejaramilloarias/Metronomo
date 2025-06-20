@@ -1,4 +1,4 @@
-/* ---------- 1. FONDO GENERAL (gradiente) ---------- */
+/* ---------- 1. FONDO GENERAL ---------- */
 body{
   margin:0;
   height:100vh;
@@ -10,9 +10,8 @@ body{
   font-family:sans-serif;
 }
 
-/* ---------- 2. CONTENEDOR PRINCIPAL ---------- */
+/* ---------- 2. CONTENEDOR ---------- */
 .container{
-  /* El color de fondo se define por skin (más abajo) */
   padding:2rem;
   border-radius:16px;
   width:850px;
@@ -39,7 +38,7 @@ body{
 /* ---------- 4. BOTONES Y GRIDS ---------- */
 .meter-grid{
   display:grid;
-  grid-template-columns:repeat(4,1fr);
+  grid-template-columns:repeat(5,1fr);   /* ← ahora 5 columnas */
   gap:4px;
 }
 .subs,.themes{
@@ -94,14 +93,13 @@ button.active{
   margin:auto;
 }
 
-/* ---------- 6. SKINS Y COLOR SECUNDARIO (ciclo) ---------- */
+/* ---------- 6. SKINS ---------- */
 .theme-black { --secondary:#2ab32e; }
 .theme-green { --secondary:#d4c80f; }
 .theme-yellow{ --secondary:#d36f10; }
 .theme-orange{ --secondary:#d21212; }
 .theme-red   { --secondary:#2ab32e; }
 
-/* Fondo del contenedor por skin (75 % opacidad) */
 .theme-black  .container { background:rgba(17,17,17,.75);  color:#fff; }
 .theme-green  .container { background:rgba(42,179,46,.75); color:#000; }
 .theme-yellow .container { background:rgba(212,200,15,.75);color:#000; }

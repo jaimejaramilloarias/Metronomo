@@ -92,7 +92,12 @@ function advanceTick(){
   beatCount = (beatCount+1)%grouping.reduce((a,b)=>a+b,0);
   nextTickTime += baseSecs();
 }
-function baseSecs(){ return (60/bpm)*(4/denominator); }
+function baseSecs(){
+  if (mode === 'clave') {
+    return (60 / bpm) / 4;        // 1/16 de nota → pulso de la clave
+  }
+  return (60 / bpm) * (4 / denominator);
+}
 
 /* ------------------------------------------------- */
 /* 4. UI utilidades (flash / luz / needle / knob)    */

@@ -38,7 +38,7 @@ body{
 /* ---------- 4. BOTONES Y GRIDS ---------- */
 .meter-grid{
   display:grid;
-  grid-template-columns:repeat(5,1fr);   /* ← ahora 5 columnas */
+  grid-template-columns:repeat(5,1fr);   /* 5 columnas */
   gap:4px;
 }
 .subs,.themes{
@@ -93,15 +93,12 @@ button.active{
   margin:auto;
 }
 
-/* ---------- 6. SKINS ---------- */
-.theme-black { --secondary:#2ab32e; }
-.theme-green { --secondary:#d4c80f; }
-.theme-yellow{ --secondary:#d36f10; }
-.theme-orange{ --secondary:#d21212; }
-.theme-red   { --secondary:#2ab32e; }
+/* ---------- 6. SKINS (solo 3) ---------- */
+.theme-black { --secondary:#2ab32e; }   /* pasa a verde */
+.theme-green { --secondary:#d21212; }   /* pasa a rojo  */
+.theme-red   { --secondary:#2ab32e; }   /* vuelve a verde */
 
-.theme-black  .container { background:rgba(17,17,17,.75);  color:#fff; }
-.theme-green  .container { background:rgba(42,179,46,.75); color:#000; }
-.theme-yellow .container { background:rgba(212,200,15,.75);color:#000; }
-.theme-orange .container { background:rgba(211,111,16,.75);color:#000; }
-.theme-red    .container { background:rgba(210,18,18,.75); color:#fff; }
+/* Fondo contenedor con 75 % de opacidad */
+.theme-black .container{background:rgba(17,17,17,.75);  color:#fff;}
+.theme-green .container{background:rgba(42,179,46,.75); color:#000;}
+.theme-red   .container{background:rgba(210,18,18,.75); color:#fff;}

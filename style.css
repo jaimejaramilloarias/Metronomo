@@ -1,0 +1,109 @@
+/* ---------- 1. FONDO GENERAL (gradiente) ---------- */
+body{
+  margin:0;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:#000 url("fondo.png") center/cover fixed no-repeat;
+  color:#fff;
+  font-family:sans-serif;
+}
+
+/* ---------- 2. CONTENEDOR PRINCIPAL ---------- */
+.container{
+  /* El color de fondo se define por skin (más abajo) */
+  padding:2rem;
+  border-radius:16px;
+  width:850px;
+  display:grid;
+  row-gap:1rem;
+  text-align:center;
+  box-shadow:12px 12px 24px rgba(0,0,0,.6),
+             -12px -12px 24px rgba(255,255,255,.05);
+}
+
+/* ---------- 3. KNOB ---------- */
+.knob-wrapper{width:200px;margin:auto}
+.track{fill:none;stroke:#333;stroke-width:16}
+#needle{
+  stroke:var(--secondary);
+  stroke-width:8;
+  stroke-linecap:round;
+  transform-origin:100px 100px;
+  transform:rotate(-135deg);
+  transition:stroke .3s;
+}
+#bpm-label{fill:#fff;font-size:24px}
+
+/* ---------- 4. BOTONES Y GRIDS ---------- */
+.meter-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:4px;
+}
+.subs,.themes{
+  display:flex;
+  justify-content:center;
+  gap:.5rem;
+  flex-wrap:wrap;
+}
+button{
+  background:#444;
+  border:none;
+  color:#fff;
+  padding:.4rem .6rem;
+  border-radius:6px;
+  cursor:pointer;
+  font-size:.9rem;
+  box-shadow:4px 4px 8px rgba(0,0,0,.55),
+             -4px -4px 8px rgba(255,255,255,.07);
+  transition:box-shadow .15s,transform .15s;
+}
+button:active{
+  transform:translateY(1px);
+  box-shadow:2px 2px 4px rgba(0,0,0,.55),
+             -2px -2px 4px rgba(255,255,255,.07);
+}
+button.active{
+  background:var(--secondary)!important;
+  color:#000!important;
+  box-shadow:0 0 6px var(--secondary);
+}
+
+/* ---------- 5. LUZ Y VISUALIZADOR ---------- */
+.light-bar{
+  position:relative;
+  width:100%;
+  height:8px;
+  background:rgba(255,255,255,.1);
+}
+.light{
+  position:absolute;
+  top:0;
+  left:0;
+  width:28px;
+  height:8px;
+  background:var(--secondary);
+}
+#visualizer{
+  width:32px;
+  height:32px;
+  border-radius:50%;
+  background:var(--secondary);
+  margin:auto;
+}
+
+/* ---------- 6. SKINS Y COLOR SECUNDARIO (ciclo) ---------- */
+.theme-black { --secondary:#2ab32e; }
+.theme-green { --secondary:#d4c80f; }
+.theme-yellow{ --secondary:#d36f10; }
+.theme-orange{ --secondary:#d21212; }
+.theme-red   { --secondary:#2ab32e; }
+
+/* Fondo del contenedor por skin (75 % opacidad) */
+.theme-black  .container { background:rgba(17,17,17,.75);  color:#fff; }
+.theme-green  .container { background:rgba(42,179,46,.75); color:#000; }
+.theme-yellow .container { background:rgba(212,200,15,.75);color:#000; }
+.theme-orange .container { background:rgba(211,111,16,.75);color:#000; }
+.theme-red    .container { background:rgba(210,18,18,.75); color:#fff; }

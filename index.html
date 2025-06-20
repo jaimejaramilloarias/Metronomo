@@ -5,27 +5,25 @@
   <title>Metrónomo Jaramillo</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body class="theme-black">
   <div class="container">
     <h1>Metrónomo</h1>
     <p class="author">Jaime Jaramillo Arias</p>
 
-    <!-- Knob -->
+    <!-- Knob --------------------------------------------------->
     <div class="knob-wrapper">
       <svg id="knob" viewBox="0 0 200 200">
-        <circle class="track" cx="100" cy="100" r="90" />
-        <line   id="needle" x1="100" y1="100" x2="100" y2="20" />
+        <circle class="track" cx="100" cy="100" r="90"/>
+        <line   id="needle" x1="100" y1="100" x2="100" y2="20"/>
         <text   id="bpm-label" x="100" y="115" text-anchor="middle">100</text>
       </svg>
     </div>
 
-    <!-- Compases -->
+    <!-- Compases ----------------------------------------------->
     <h3>Compás</h3>
     <div class="meter-grid">
-      <!-- 1/4 NUEVO -->
       <button class="meter-btn" data-meter="1_4_1">1/4</button>
-
-      <!-- /4 -->
       <button class="meter-btn" data-meter="2_4_2">2/4</button>
       <button class="meter-btn" data-meter="3_4_3">3/4</button>
       <button class="meter-btn" data-meter="4_4_4">4/4</button>
@@ -34,7 +32,6 @@
       <button class="meter-btn" data-meter="7_4_4_3">7/4 4+3</button>
       <button class="meter-btn" data-meter="7_4_3_4">7/4 3+4</button>
 
-      <!-- /8 -->
       <button class="meter-btn" data-meter="5_8_3_2">5/8 3+2</button>
       <button class="meter-btn" data-meter="5_8_2_3">5/8 2+3</button>
       <button class="meter-btn" data-meter="7_8_4_3">7/8 4+3</button>
@@ -43,12 +40,11 @@
       <button class="meter-btn" data-meter="11_8_4_3_3_4">11/8 4+3+3+4</button>
       <button class="meter-btn" data-meter="11_8_3_3_4_4">11/8 3+3+4+4</button>
 
-      <!-- Clave -->
       <button class="meter-btn" data-meter="2_2_clave_3_2">Clave 3-2</button>
       <button class="meter-btn" data-meter="2_2_clave_2_3">Clave 2-3</button>
     </div>
 
-    <!-- Subdivisiones -->
+    <!-- Subdivisiones ----------------------------------------->
     <h3>Subdivisiones</h3>
     <div class="subs">
       <button class="sub-btn" id="sub-eighth-btn">Corcheas</button>
@@ -56,7 +52,7 @@
       <button class="sub-btn" id="sub-swing-btn">Swing</button>
     </div>
 
-    <!-- Temas -->
+    <!-- Skins -------------------------------------------------->
     <h3>Tema</h3>
     <div class="themes">
       <button data-theme="theme-black">Negro</button>
@@ -66,21 +62,16 @@
       <button data-theme="theme-red">Rojo</button>
     </div>
 
-    <!-- Luz y visualizador -->
+    <!-- Luz / Visualizador ------------------------------------>
     <div class="light-bar"><div class="light"></div></div>
     <div id="visualizer"></div>
 
-    <!-- Start / Stop -->
+    <!-- Start / Stop ------------------------------------------>
     <div class="buttons">
       <button id="start">Start</button>
       <button id="stop" disabled>Stop</button>
     </div>
   </div>
-
-  <!-- Muestras de audio -->
-  <audio id="wav-accent" src="accent.wav" preload="auto"></audio>
-  <audio id="wav-pulse"  src="pulse.wav"  preload="auto"></audio>
-  <audio id="wav-sub"    src="sub.wav"    preload="auto"></audio>
 
   <script src="script.js"></script>
 </body>
